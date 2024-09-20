@@ -1,0 +1,402 @@
+:root{
+        --rect-bg: #fffdf6;
+        --rect-bg2: rgb(240, 255, 249);
+        --link: blue;
+        --border: midnightblue;
+        --list-hover: rgba(184, 228, 255, 0.228);
+        --spancolor: royalblue;
+        --spanshadow: #a5fbff;
+        --navinfo: rgba(51, 170, 51, .5);
+        --smalltext: darkslategray;
+        --altarticle: lightyellow;
+        --headershadow: black;
+        --gradbegin: rgba(119,196,255,0.6432773793110995);
+        --gradend: rgba(148,187,233,0);
+        --textcolor: black;
+        --imood-filter: none;
+        --backgroundblend: normal;
+        --backgroundimage: url(/static/background3.png);
+        --backgroundcolor: none;
+        --backgroundcolor2: #fffdf6;
+    
+        --visitedlink: purple;
+        --headerimage: url(/static/photo_trees.png);
+        --headertext: ghostwhite;
+        --dark-mode-toggle-icon-size: 2rem;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+      margin: 0.4em;
+    color: var(--textcolor);
+    display: grid;
+    grid-template-columns: auto 12em minmax(60ch,100ch) 12em auto;
+    grid-template-rows: 12em  minmax(1em,auto)  auto auto;
+    gap: 1em 1em;
+    grid-template-areas:
+      ". header header header ."
+      ". extras1 main extras2 ."
+      ". extras1 main extras2 ."
+      ". footer footer footer .";
+    background-image: var(--backgroundimage);
+    background-color: var(--backgroundcolor);
+    background-size: cover;
+      /*background:-moz-linear-gradient(bottom, rgb(189, 184, 254),rgb(227, 255, 186))*/
+      /*background-color: #fff9ea;*/
+  }
+  
+  
+    
+  body>header {
+    grid-area: header;
+    background-image: var(--headerimage), var(--headerimage);
+    background-blend-mode: var(--backgroundblend);
+    background-position: bottom;
+  
+  }
+  
+  
+  nav { 
+    grid-area: navigation;
+    background-color: var(--rect-bg);
+    padding: 5px;
+  }
+  #styleselect{
+    float: right;
+    padding: 0.5em;
+  
+  }
+  select, button {
+    font-family: monospace;
+    font-size: 14px;
+    background: var(--backgroundcolor2);  
+    color: var(--textcolor);
+    border: 1px solid var(--textcolor); 
+    padding: 5px; 
+    margin: 5px;
+  }
+  
+  .select-wrapper {
+    position: relative;
+  
+  }
+  nav li a {
+    padding: .5em;
+    text-decoration: none;
+    display: block;
+    color: var(--link);
+    font-size: 14pt;
+  }
+  #footernav li a {
+    padding: .5em;
+  }
+  
+  nav ul,#footernav ul {
+    list-style-type: none;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+  }
+  .navigation {
+    grid-area: nav;
+  }
+    
+  body>main {
+    grid-area: main;
+    overflow-y:auto;
+    background-color: var(--rect-bg);
+  }
+  
+  .extras1 { 
+    grid-area: extras1; 
+  }
+  .extras2 { 
+    grid-area: extras2; 
+  }
+  
+  body>footer {
+    grid-area: footer;
+  }
+  
+  nav li a+ .nav_info {
+    display: none;
+    padding:0.25em;
+    text-align:center;
+  }
+  nav li a:hover+.nav_info {
+    position:fixed;
+    left:0;
+    right:0;
+    z-index:1
+  }
+  nav li a:hover +.nav_info {
+    bottom:0;
+    display:block;
+  }
+  
+  .nav_info {
+    background-color: var(--navinfo);
+  }
+  #actual_footer{
+    justify-content: space-between;
+    display: inline-flex;
+  }
+  nav , main, .extra, footer,header, #stats {
+    border: 1px solid var(--border);
+  }
+  
+  li:hover {
+    background-color: var(--list-hover);
+  }
+  
+  #statuscafe, #imood, #weather {
+    background-color: var(--rect-bg2);
+  }
+  
+  #statuscafe-username, #imood_text,h3+p {
+    margin-bottom: .5em;
+    margin-top: .5em;
+  }
+  #statuscafe-content, #imood_image {
+    margin: 0 1em 0.5em 1em;
+  }
+  #imood_image{
+    filter: var(--imood-filter);
+  }
+  
+  nav li {
+    background-repeat: no-repeat;
+    background-position: 0 .4em;
+    padding-left: 1em;
+  }
+  
+  img {
+  max-width:100%;
+  max-height:100%;
+  }
+  
+  .resize {
+    width: 400px;
+    height: auto;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    background-color: var(--rect-bg);
+  }
+  
+  .extra {
+    padding: .5em;
+    background-color: var(--rect-bg);
+  }
+  
+  #stats {
+    padding: .5em;
+    background-color: var(--rect-bg);
+  }
+  #stats p {
+    text-align: center;
+  }
+  #stats span {
+    font-weight: bold;
+  }
+  .small {
+    font-size:0.85em;
+    color:var(--smalltext);
+  }
+  .small span {
+    color: var(--spancolor);
+    text-shadow: var(--spanshadow) 1px 0 6px;}
+  
+  .widget {
+    grid-area: widget;
+    margin-left: -7em;
+    margin-top: 6em;
+  }
+  
+  input {
+      max-width: 100%;
+  }
+  #guardian, #imood, #collatz,#weather,#statuscafe {
+    margin-top: 1em;
+  
+  }
+  .results{
+    padding: 10px;
+    margin: auto;
+  }
+  .results p{
+    margin-top: 0.5em;
+    text-align: center;
+  }
+  #stats p{
+    margin-top:0.5em;
+  }
+  .results img{
+    max-width: 160px;
+    border: 1px solid;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  
+  }
+  
+  a:visited, a:link{
+    color: var(--visitedlink);
+  }
+  .rena {
+    height: 10em;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+  }
+  #rena_checkbox{
+    display: none;
+  }
+  #rena_checkbox~.interactive_rena img:first-child {
+    display: none;
+  }
+  #rena_checkbox:checked+.interactive_rena img:last-child {
+    display: none;
+  }
+  #rena_checkbox:checked+.interactive_rena img:first-child {
+    display: unset;
+  }
+  
+  
+  .interactive_rena{
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: -10em;
+  }
+  
+  
+  header {
+    position: relative;
+  }
+  header h1{
+    font-size: 20pt;
+    font-family: monospace;
+    color: var(--headertext);
+    text-shadow: 3px 3px var(--headershadow);
+  }
+  
+  details > summary, select, button {
+    cursor: pointer;
+  }
+  
+  
+  summary>h3{
+    display: inline;
+  }
+  
+  summary {
+    padding-left: 1em;
+    background: linear-gradient(90deg, var(--gradbegin) 0%, var(--gradend) 100%);
+  }
+  #footernav ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  
+  #picture {  
+    padding-left: 0.5em;
+    max-width: 25em;  
+    height: auto;  
+  }
+  
+  article{
+    font-family: monospace;
+    font-size: 12pt;
+    margin: 0.5em;
+  }
+  article:nth-child(2){
+    background-color: var(--altarticle);
+  
+    text-align: right;
+  }
+  article h3{
+    color: var(--h3color);
+  }
+  .images{
+    /* We first create a flex layout context */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  
+  }
+  .main_image{
+    margin: auto; 
+    flex-basis: 30%;
+    flex-grow: 1;
+    padding: 0.3em;
+  
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+  
+  body {
+  
+    grid-template-columns: auto  ;
+    grid-template-rows: 5em auto auto auto auto auto;
+  
+    grid-template-areas:
+      "header "
+      "nav "
+      "main "
+      "extras1 "
+      "extras2  "
+      "footer ";
+  
+  }
+  
+  
+    nav ul li{
+      display: inline-flex;
+    }
+  
+    .interactive_rena{
+    }
+  
+  }
+  
+  #headercontent {
+    position:absolute;
+    bottom: 0.6em;
+    left: 0.6em;
+    margin: 1em;
+  }
+  #dark-mode-toggle{
+    font-family: monospace;
+    font-size: 14px;
+  }
+  #dark-mode-toggle:hover{
+    filter: hue-rotate(100deg);
+    text-shadow: lightyellow 1px 0 2px;
+  }
+  
+  .interactive_rena:hover{
+    filter: hue-rotate(50deg);
+    transition: filter 0.5s ease-in-out;
+  
+  }
+  #introduction{
+    padding: 0.5em;
+  }
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,21 @@
+{{ $data := dict }}
+{{ $url := "https://wttr.in/G%C3%B6ttingen?0QAT" }}
+{{ with resources.GetRemote $url }}
+  {{ with .Err }}
+    {{ errorf "%s" . }}
+  {{ else }}
+    {{ $data = .Content | transform.Plainify}}
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get remote resource %q" $url }}
+{{ end }}
+
+<div class="extra" id="weather">
+    <details open>
+        <summary>
+            <h3>weather</h3>
+        </summary>
+        <br>
+        <pre style="font-size: 8pt;">{{$data}}</pre>
+    </details>
+</div>

@@ -1,0 +1,22 @@
+
+{{ $start := $.Site.Data.stats.firstcommit | time }}
+{{ $last := $.Site.Data.stats.lastcommit | time }}
+
+{{ $diff_s := now.Sub $start }}
+{{ $diff_l := now.Sub $start }}
+
+
+<div id = "stats">
+    <details open>
+        <summary>
+            <h3>stats</h3>
+        </summary>
+        <p class="small"><i>This website was created <span>{{int (div $diff_s.Hours  24)}}</span> days ago on a humble <span>Thursday</span>.
+            Ever since then it has received <span>{{$.Site.Data.stats.numcommits}}</span> changes on currently <span>{{$.Site.Data.stats.numbranches}}</span> branches. It received its last
+            change <span>{{int (div $diff_l.Hours  24)}}</span> days ago.
+            Right now this Website spans <span>{{$.Site.Data.stats.numfiles}}</span> files with <span>{{$.Site.Data.stats.numlines}}</span> lines and a total weight of <span>{{$.Site.Data.stats.storage}}</span> kilobytes!
+            </i>
+        </p>
+    </details>
+</div>
+

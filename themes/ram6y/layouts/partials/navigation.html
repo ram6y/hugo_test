@@ -1,0 +1,20 @@
+<nav class="navigation">
+    <details open>
+        <summary>
+            <h3>navigation</h3>
+        </summary>
+        <ul>
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL }}">
+
+            {{ if .Pre }}
+            {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
+            {{ $icon }}
+            {{ end }}
+            {{ $text := print .Name | safeHTML }}
+            {{ $text }}
+            </a>
+            {{ end }}
+        </ul>
+    </details>
+</nav>
