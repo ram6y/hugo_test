@@ -1,14 +1,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
     <link
     rel="stylesheet"
-    href="css/light.css"
+    href="/css/light.css"
     media="(prefers-color-scheme: light)"
   />
-  <link rel="stylesheet" href="css/dark.css" media="(prefers-color-scheme: dark)" />
+  <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)" />
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }}</title>
