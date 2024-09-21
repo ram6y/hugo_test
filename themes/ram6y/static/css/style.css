@@ -35,8 +35,8 @@
       margin: 0.4em;
     color: var(--textcolor);
     display: grid;
-    grid-template-columns: auto 12em minmax(60ch,100ch) 12em auto;
-    grid-template-rows: 12em  minmax(1em,auto)  auto auto;
+    grid-template-columns: 4em 12em minmax(60ch,100ch) 12em 4em;
+    grid-template-rows: 12em  minmax(1em,auto) auto auto;
     gap: 1em 1em;
     grid-template-areas:
       ". header header header ."
