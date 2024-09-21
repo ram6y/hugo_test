@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	setCookie("theme",themePicker.value);
         console.log(document.cookie);
         // Set the href attribute of the theme target element to "/css/themes/" + the selected option
-        document.querySelector("#themeTarget").setAttribute("href", "/css/" + themePicker.value);
+        document.querySelector("#themeTarget").setAttribute("href", "css/" + themePicker.value);
     });
     // Loop through each element with the class "rev" and add a click and a contextmenu event listener that calls fixAddr
     document.querySelectorAll(".rev").forEach(function(rev) {
