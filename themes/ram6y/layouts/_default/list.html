@@ -2,7 +2,12 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   {{ range .Pages }}
+<div style="background-color: red;">
+
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+</div>
+
     {{ .Summary }}
   {{ end }}
 {{ end }}
+

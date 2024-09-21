@@ -40,7 +40,7 @@
     gap: 1em 1em;
     grid-template-areas:
       ". header header header ."
-      ". extras1 main extras2 ."
+      ". nav main extras2 ."
       ". extras1 main extras2 ."
       ". footer footer footer .";
     background-image: var(--backgroundimage);

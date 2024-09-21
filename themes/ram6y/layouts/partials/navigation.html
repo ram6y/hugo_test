@@ -14,7 +14,14 @@
             {{ $text := print .Name | safeHTML }}
             {{ $text }}
             </a>
+            {{if .Post }} 
+            <span class="nav_info">
+                {{.Post}}
+            </span>
             {{ end }}
+            {{ end }}
+        </li>
+        
         </ul>
     </details>
 </nav>
