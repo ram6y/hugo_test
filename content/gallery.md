@@ -1,10 +1,9 @@
 +++
-title = 'My First Post'
+title = 'Gallery'
 date = 2024-09-08T16:52:10+02:00
-draft = true
+draft = false
 summary =  'This summary is independent of the content.'
+layout = 'gallery'
 +++
-# test 
-this is a test
 
-This is the second paragraph.
+this will be my gallery
