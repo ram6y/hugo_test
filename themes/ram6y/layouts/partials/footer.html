@@ -1,1 +1,12 @@
 <p>Copyright {{ now.Year }}. All rights reserved.</p>
+<form action="?" method="get">
+    <span class="tp_title">Theme Picker: </span>
+  <select name="theme" id="themePicker">
+  <!--<option value='0' data-filename="default.css" >Default</option>-->
+  <option value="light.css">light </option>
+  <option value="dark.css">dark</option>
+  </select>
+  <span id="themeButton" style="display: none;">
+    <input type="submit" value="Apply">
+    </span>
+  </form>

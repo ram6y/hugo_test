@@ -1,0 +1,25 @@
+:root{
+    --rect-bg: rgba(26, 25, 25, 1);
+    --rect-bg2: rgba(26, 25, 25, 1);
+    --border: #38231c;
+    --link: #4d837c;
+    --altarticle: rgba(26, 25, 25, 1);
+    --gradbegin: #44373b;
+    --gradend: #44373b;
+    --backgroundcolor: #131315;
+    --backgroundcolor2: #131315;
+    --spancolor: #39655e;
+    --spanshadow: #6f4542;
+    --headershadow: black;
+    --navinfo: rgba(26, 25, 25, 1);
+    --list-hover: rgba(110, 67, 64, 0.3);
+    --textcolor: #9a9a94;
+    --imood-filter: invert(100%);
+    --backgroundblend: multiply;
+    --backgroundimage: none;
+    --visitedlink: #4d837c;
+    --h3color: #39655e;
+    --headerimage: url(/static/photo_greenmoon.png);
+    --headertext: beige;
+}
+
