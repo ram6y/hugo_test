@@ -1,4 +1,4 @@
-baseURL = 'https://ram6y.github.io/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'ram6y'
