@@ -16,8 +16,8 @@
     --textcolor: black;
     --imood-filter: none;
     --backgroundblend: normal;
-    --backgroundimage: url(/static/background3.png);
-    --backgroundcolor: none;
+    --backgroundimage: none;
+    --backgroundcolor: green;
     --backgroundcolor2: #fffdf6;
 
     --visitedlink: purple;

@@ -48,80 +48,27 @@ function setCookie(cname, cvalue, exdays=365) {
 });*/
 
 // BING wrote this
-document.addEventListener("DOMContentLoaded", function() {
-    // Get all the elements with the class "flip"
-    var flips = document.querySelectorAll(".flip");
-    // Loop through each element and add a click event listener
-    flips.forEach(function(flip) {
-        flip.addEventListener("click", function(e) {
-	    // remove existing nojs-js
-            var noJS =  document.getElementById('nojs_css');
-	    if (typeof(noJS) != 'undefined' && noJS != null) {
-		    noJS.remove();
-	    	
-	    }
 
-            // Prevent the default action of the link
-            e.preventDefault();
-            // Check if the element has the class "selected"
-            var s = flip.classList.contains("selected");
-            // Remove the class "selected" from all the elements
-            flips.forEach(function(f) {
-                f.classList.remove("selected");
-            });
-            // If the element did not have the class "selected", add it
-            if (!s) flip.classList.add("selected");
-            // Get the target element from the href attribute
-            var target = document.querySelector(flip.getAttribute("href"));
-            // Toggle the visibility of the target element
-            if(target.classList.contains("visible")) {
-		target.classList.remove("visible");
-	    } else {
-	    	target.classList.add("visible");
-	    }
-            // Hide all the other elements with the class "panel"
-            var panels = document.querySelectorAll(".panel");
-            panels.forEach(function(panel) {
-                if (panel !== target) panel.classList.remove("visible");
-            });
-        });
+function disable_all(){
+    document.querySelectorAll(".theme").forEach( function(link){
+        link.disabled=true;
     });
-    // Get all the links in the navigation element
-    var navLinks = document.querySelectorAll("#navigation a");
-    // Loop through each link and set its href attribute to "#panel" + (number + 1)
-    navLinks.forEach(function(link, number) {
-        link.setAttribute("href", "#panel" + (number + 1));
-    });
-    // Hide the theme button element
-    document.querySelector("#themeButton").style.display = "none";
-    // Define a variable to store the address status
-    var addrOK = false;
-    // Define a function to fix the address
-    var fixAddr = function() {
-        // If the address is OK, return
-        if (addrOK) return;
-        // Get all the elements with the class "rev"
-        var revs = document.querySelectorAll(".rev");
-        // Loop through each element and set its href attribute to its href + its data-user attribute
-        revs.forEach(function(rev) {
-            rev.setAttribute("href", rev.getAttribute("href") + rev.getAttribute("data-user"));
-        });
-        // Set the address status to true
-        addrOK = true;
-    };
+}
+
+document.addEventListener("DOMContentLoaded", function() {
     // Get the theme picker element
     var themePicker = document.querySelector("#themePicker");
+    if (getCookie("theme")){
+      disable_all();
+      document.getElementById(getCookie("theme")).disabled = false;
+    }
     // Add a change event listener to the theme picker element
     themePicker.addEventListener("change", function() {
+        theme = themePicker.value;
         // Set a cookie with the name "theme" and the value of the selected option
-	setCookie("theme",themePicker.value);
-        console.log(document.cookie);
+	    setCookie("theme",theme);
         // Set the href attribute of the theme target element to "/css/themes/" + the selected option
-        document.querySelector("#themeTarget").setAttribute("href", "css/" + themePicker.value);
-    });
-    // Loop through each element with the class "rev" and add a click and a contextmenu event listener that calls fixAddr
-    document.querySelectorAll(".rev").forEach(function(rev) {
-        rev.addEventListener("click", fixAddr);
-        rev.addEventListener("contextmenu", fixAddr);
+        disable_all();
+        document.getElementById(theme).disabled = false;
     });
 });

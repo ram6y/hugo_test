@@ -2,16 +2,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link
-    rel="stylesheet"
-    href="/css/light.css"
-    media="(prefers-color-scheme: light)"
-  />
-  <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)" />
-  <script
-    type="module"
-    src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"
-  ></script>
+    <link rel="stylesheet"href="/css/light.css" id="light" class="theme" />
+    <link rel="stylesheet" href="/css/dark.css" id="dark" class="theme"/>
+    <link rel="stylesheet" href="/css/green.css" id="green" class="theme" />
+    <link rel="stylesheet"href="/css/light.css" id="light" class="theme" media="(prefers-color-scheme: light)"/>
+    <link rel="stylesheet" href="/css/dark.css" id="dark" class="theme" media="(prefers-color-scheme: dark)"/>
+  <script type="text/javascript" src="/js/main.js"></script>
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }}</title>
