@@ -2,4 +2,4 @@ baseURL = '/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'ram6y'
-canonifyurls = false
+canonifyurls = true
