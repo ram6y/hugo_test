@@ -12,10 +12,10 @@
     --textcolor: black;
     --imood-filter: none;
     --backgroundblend: normal;
-    --backgroundimage: url(/static/background3.png);
+    --backgroundimage: url(/images/background.png);
     --backgroundcolor: none;
     --visitedlink: purple;
-    --headerimage: url(/static/photo_burg.png);
+    --headerimage: url(/images/photo_trees.png);
     --headertext: ghostwhite;
     --h3color: black;
 
