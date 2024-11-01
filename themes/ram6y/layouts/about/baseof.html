@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+  {{- partial "head.html" . -}}
+<body id="top">
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+  {{ partial "navigation.html" . }}
+  <aside class="extras1">
+    {{ partial "statuscafe.html" . }}
+  </aside>
+  <main>
+    {{ block "main" . }}
+    {{ end }}
+  </main>
+  <aside class="extras2">
+    {{partial "stats.html" . }}
+    {{partial "weather.html" . }}
+  </aside>
+  <footer>
+
+    {{ partial "footer.html" . }}
+
+    {{- partial "script.html" . -}}
+  </footer>
+</body>
+</html>

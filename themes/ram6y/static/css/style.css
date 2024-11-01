@@ -40,7 +40,7 @@
   
   nav { 
     grid-area: navigation;
-    background-color: var(--rect-bg);
+    background-color: var(--accent);
     padding: 5px;
   }
   #styleselect{
@@ -49,9 +49,8 @@
   
   }
   select, button {
-    font-family: monospace;
     font-size: 14px;
-    background: var(--backgroundcolor2);  
+    background: none;  
     color: var(--textcolor);
     border: 1px solid var(--textcolor); 
     padding: 5px; 
@@ -85,7 +84,7 @@
   body>main {
     grid-area: main;
     overflow-y:auto;
-    background-color: var(--rect-bg);
+    background-color: var(--accent);
   }
   
   .extras1 { 
@@ -116,7 +115,7 @@
   }
   
   .nav_info {
-    background-color: var(--navinfo);
+    background-color: var(--accent2);
   }
   #actual_footer{
     justify-content: space-between;
@@ -127,11 +126,11 @@
   }
   
   li:hover {
-    background-color: var(--list-hover);
+    background-color: var(--accent2);
   }
   
   #statuscafe, #imood, #weather {
-    background-color: var(--rect-bg2);
+    background-color: var(--accent2);
   }
   
   #statuscafe-username, #imood_text,h3+p {
@@ -165,17 +164,17 @@
     text-align: center;
     padding: 1em;
     position: relative;
-    background-color: var(--rect-bg);
+    background-color: var(--accent);
   }
   
   .extra {
     padding: .5em;
-    background-color: var(--rect-bg);
+    background-color: var(--accent);
   }
   
   #stats {
     padding: .5em;
-    background-color: var(--rect-bg);
+    background-color: var(--accent);
   }
   #stats p {
     text-align: center;
@@ -185,11 +184,11 @@
   }
   .small {
     font-size:0.85em;
-    color:var(--smalltext);
+    color:var(--textcolor);
   }
   .small span {
     color: var(--spancolor);
-    text-shadow: var(--spanshadow) 1px 0 6px;}
+    text-shadow: var(--accent2) 1px 0 6px;}
   
   .widget {
     grid-area: widget;
@@ -258,13 +257,19 @@
   header {
     position: relative;
   }
-  header h1{
-    font-size: 20pt;
+  h1 {
+    font-size: 26px;
+  }
+   h1,time,article,select,button,h2{
+    
     font-family: monospace;
+
+  }
+  header h1 {
     color: var(--headertext);
     text-shadow: 3px 3px var(--headershadow);
   }
-  
+
   details > summary, select, button {
     cursor: pointer;
   }
@@ -291,13 +296,11 @@
   }
   
   article{
-    font-family: monospace;
     font-size: 12pt;
     margin: 0.5em;
   }
-  article:nth-child(2){
+  article:nth-child(4){
     background-color: var(--altarticle);
-  
     text-align: right;
   }
   article h3{
@@ -354,25 +357,42 @@
     left: 0.6em;
     margin: 1em;
   }
-  #dark-mode-toggle{
-    font-family: monospace;
-    font-size: 14px;
-  }
-  #dark-mode-toggle:hover{
-    filter: hue-rotate(100deg);
-    text-shadow: lightyellow 1px 0 2px;
-  }
+ 
   
   .interactive_rena:hover{
     filter: hue-rotate(50deg);
     transition: filter 0.5s ease-in-out;
   
   }
-  #introduction{
+  section{
     padding: 0.5em;
   }
   
+#about_grid {
+  padding-top: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
   
+}
+#content_preview_block {
+  background-color: var(--accent2);
+  border: 1px solid var(--border);
+  height: 4em;
+
+}
+#content_preview_block:hover{
+  background-color: var(--accent);
+  cursor: pointer;
+}
+#content_link {
+  text-decoration: none;
+  color: inherit;
+}
+h2{
+  color: var(--link);
+}
+
   
   
   

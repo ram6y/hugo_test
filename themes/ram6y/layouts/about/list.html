@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section>
+
+
+
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <div id="about_grid">
+    {{ range .Pages }}
+    <div id="wrapper">
+      <a href="{{ .RelPermalink }}" id ="content_link">
+
+    <section id="content_preview_block" >
+    
+        <h2 id="content_title">{{ .LinkTitle }}</h2>
+    
+        {{ .Summary }}
+    </section>
+  </a>
+</div>
+
+      {{ end }}
+
+  </div>
+
+</section>
+{{ end }}
+

@@ -1,0 +1,20 @@
+:root{
+    --accent: #fffef2;
+    --accent2: #f1e9fd;
+    --border: #202022;
+    --link: #f373f6;
+    --altarticle: ded0f1;
+    --gradbegin: #ad8cf3; 
+    --gradend: #9369ef18;
+    --backgroundcolor: #ded0f1;
+    --spancolor: #5f4df3;
+    --headershadow: black;
+    --textcolor: #1e1e1e;
+    --imood-filter: none;
+    --backgroundblend: multiply;
+    --backgroundimage: none;
+    --visitedlink: #d652d8;
+    --h3color: #5f4df3;
+    --headerimage: url(/images/photo_keycaps.png);
+    --headertext: beige;
+}

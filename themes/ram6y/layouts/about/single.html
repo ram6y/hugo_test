@@ -1,5 +1,5 @@
 {{ define "main" }}
-
+<section id="introduction">
   <h1>{{ .Title }}</h1>
 
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
@@ -8,6 +8,7 @@
 
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-{{ end }}
+</section>
 
+{{ end }}
 
